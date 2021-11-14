@@ -16,19 +16,24 @@
 	},
 	"homepage": "https://github.com/ourcade/phaser3-parcel-template",
 	"devDependencies": {
+		"@types/react": "^17.0.34",
+		"@types/react-dom": "^17.0.11",
 		"@typescript-eslint/eslint-plugin": "^2.29.0",
 		"@typescript-eslint/parser": "^2.29.0",
-		"eslint": "^6.8.0",
+		"eslint": "^8.2.0",
 		"minimist": ">=1.2.2",
+		"parcel-bundler": "^1.12.5",
 		"parcel-plugin-clean-easy": "^1.0.2",
 		"parcel-plugin-static-files-copy": "^2.4.3",
-		"typescript": "^3.8.3"
+		"typescript": "^3.9.10"
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.6.2",
+		"node": "^17.1.0",
 		"phaser": "^3.50.1",
 		"phaser3-rex-plugins": "^1.1.61",
-		"react": "^16.14.0 || ^17.0.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
 		"react-redux": "^7.2.1"
 	},
 	"parcelCleanPaths": [
