@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import store from "../components/system/store";
+import { store } from "../../system/store"
 import createButton from "../components/ui/createButton";
 
 export default class GameScene extends Phaser.Scene {
@@ -55,6 +55,10 @@ const backButton = (scene, x, y) => {
 
   back
     .on("button.click", () => {
+      store.dispatch({
+        type: "scenes/setActiveScene",
+        payload: "main",
+      });
       scene.scene.switch("main");
     })
     .on("button.over", (button) => {

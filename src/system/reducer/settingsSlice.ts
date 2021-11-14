@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface SettingsState {
   masterVolume: number;
@@ -15,7 +15,7 @@ export const initialState: SettingsState = {
 };
 
 export const settingsSlice = createSlice({
-  name: 'settings',
+  name: "settings",
   initialState,
   reducers: {
     setMasterVolume: (state, action: PayloadAction<number>) => {
@@ -29,8 +29,15 @@ export const settingsSlice = createSlice({
     },
     setMuted: (state, action: PayloadAction<boolean>) => {
       state.isMuted = action.payload;
-    },    
-  }
+    },
+  },
 });
+
+export const {
+  setMasterVolume,
+  setMusicVolume,
+  setEffectsVolume,
+  setMuted,
+} = settingsSlice.actions;
 
 export default settingsSlice.reducer;

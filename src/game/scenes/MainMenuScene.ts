@@ -1,6 +1,6 @@
 import Phaser from "phaser";
-import store from "../components/system/store";
-import createButton from "~/components/ui/createButton";
+import { store } from "../../system/store"
+import createButton from "../components/ui/createButton";
 
 export default class MainMenuScene extends Phaser.Scene {
   constructor() {
@@ -17,6 +17,10 @@ export default class MainMenuScene extends Phaser.Scene {
   }
 
   create() {
+    store.dispatch({
+      type: "scenes/setActiveScene",
+      payload: "main",
+    });
     const centerX = this.cameras.main.width / 2;
     const centerY = this.cameras.main.height / 2;
 
@@ -56,9 +60,17 @@ const nav = (scene, x, y) => {
 
   navagation.on("button.click", (button, index) => {
     if (index === 0 ) {
+      store.dispatch({
+        type: "scenes/setActiveScene",
+        payload: "game",
+      });
       scene.scene.switch("game")
     }
     if (index === 1) {
+      store.dispatch({
+        type: "scenes/setActiveScene",
+        payload: "settings",
+      });
       scene.scene.switch("settings")
     }
   })   

@@ -1,6 +1,6 @@
 import Phaser from "phaser";
-import store from "../components/system/store";
-import createButton from "~/components/ui/createButton";
+import { store } from "../../system/store";
+import createButton from "../components/ui/createButton";
 
 export default class SettingsScene extends Phaser.Scene {
   constructor() {
@@ -17,6 +17,7 @@ export default class SettingsScene extends Phaser.Scene {
   }
 
   create() {
+  
     const centerX = this.cameras.main.width / 2;
     const centerY = this.cameras.main.height / 2;
 
@@ -106,6 +107,10 @@ const backButton = (scene: any, x: number, y: number) => {
 
   back
     .on("button.click", (button: any, index: any) => {
+      store.dispatch({
+        type: "scenes/setActiveScene",
+        payload: "main",
+      });
       scene.scene.switch("main");
     })
     .on("button.over", (button) => {
